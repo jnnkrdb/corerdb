@@ -6,7 +6,7 @@ A go package, which contains core functions. It's a small collections of functio
 
 ## Badges
 
-[![GitHub go.mod Go version of a Go module](https://img.shields.io/github/go-mod/go-version/gomods/athens.svg)](https://github.com/jnnkrdb/cordb)
+[![GitHub go.mod Go version of a Go module](https://img.shields.io/github/go-mod/go-version/jnnkrdb/cordb)](https://github.com/jnnkrdb/cordb)
 [![CodeFactor](https://www.codefactor.io/repository/github/jnnkrdb/cordb/badge)](https://www.codefactor.io/repository/github/jnnkrdb/cordb)
 [![Go Report Card](https://goreportcard.com/badge/github.com/jnnkrdb/cordb)](https://goreportcard.com/report/github.com/jnnkrdb/cordb)
 [![Github tag](https://badgen.net/github/tag/jnnkrdb/cordb)](https://github.com/jnnkrdb/cordb/tags/)
