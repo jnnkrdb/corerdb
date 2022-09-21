@@ -11,6 +11,7 @@ A go package, which contains core functions. It's a small collections of functio
 [![Go Report Card](https://goreportcard.com/badge/github.com/jnnkrdb/cordb)](https://goreportcard.com/report/github.com/jnnkrdb/cordb)
 [![Github tag](https://badgen.net/github/tag/jnnkrdb/cordb)](https://github.com/jnnkrdb/cordb/tags/)
 [![GitHub issues](https://badgen.net/github/issues/jnnkrdb/cordb/)](https://github.com/jnnkrdb/cordb/issues/)
+[![GPLv3 license](https://img.shields.io/badge/License-GPLv3-blue.svg)](http://perso.crans.org/besson/LICENSE.html)
 
 ## Install
 Use the go commandline tool to install the package to your go project.
