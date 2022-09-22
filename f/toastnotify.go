@@ -2,7 +2,7 @@ package f
 
 import (
 	"github.com/jnnkrdb/jlog"
-	"gopkg.in/toast.v1"
+//	"gopkg.in/toast.v1"
 )
 
 // creates a small default notification
@@ -11,6 +11,7 @@ import (
 //   - `appid` : string > application id, strongly recommended
 //   - `title` : string > title of the notification, strongly recommended
 //   - `message` : string > further message like informations and so on
+/*
 func Notify(appid, title, message string) {
 
 	notification := toast.Notification{
@@ -24,3 +25,4 @@ func Notify(appid, title, message string) {
 		jlog.PrintObject(notification, err)
 	}
 }
+*/
