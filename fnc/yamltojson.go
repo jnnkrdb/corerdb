@@ -1,4 +1,4 @@
-package f
+package fnc
 
 import "gopkg.in/yaml.v2"
 

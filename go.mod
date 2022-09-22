@@ -1,4 +1,4 @@
-module github.com/jnnkrdb/cordb
+module github.com/jnnkrdb/corerdb
 
 go 1.19
 

@@ -1,4 +1,4 @@
-package f
+package fnc
 
 import "encoding/base64"
 
