@@ -1,7 +1,6 @@
 package dir
 
 import (
-	"fmt"
 	"os"
 	"path/filepath"
 	"strings"
@@ -22,45 +21,22 @@ func GetFiles(dir string, excludes ...string) (files []File, e error) {
 
 	e = filepath.Walk(dir, func(path string, info os.FileInfo, err error) error {
 
-		// new way
 		if err != nil {
 
 			prtcl.PrintObject(dir, excludes, files, currDir, path, info, err)
 
 		} else {
-
-			fmt.Printf("info: %#v\n", info)
-
-		}
-
-		// old way of getting files
-		if err != nil {
-
-			prtcl.PrintObject(dir, excludes, files, currDir, path, info, err)
-
-		} else {
-
-			prtcl.PrintObject(info)
-
-			splitted := strings.Split(path, "/")
 
 			if !exclude(path, excludes) {
 
-				if info.IsDir() {
+				if !info.IsDir() {
 
-					currDir = ""
-
-					for i := 0; i < len(splitted); i++ {
-
-						if splitted[i] != "" {
-
-							currDir += "/" + splitted[i]
-						}
-					}
-
-				} else {
-
-					files = append(files, File{Name: splitted[len(splitted)-1], Dir: currDir, SearchDir: dir})
+					files = append(files, File{
+						Name:      info.Name(),
+						Dir:       strings.ReplaceAll(path, "/"+info.Name(), ""),
+						SearchDir: dir,
+						Content:   "",
+					})
 				}
 			}
 		}
