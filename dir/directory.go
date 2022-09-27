@@ -1,6 +1,7 @@
 package dir
 
 import (
+	"fmt"
 	"os"
 	"path/filepath"
 	"strings"
@@ -21,11 +22,25 @@ func GetFiles(dir string, excludes ...string) (files []File, e error) {
 
 	e = filepath.Walk(dir, func(path string, info os.FileInfo, err error) error {
 
+		// new way
 		if err != nil {
 
 			prtcl.PrintObject(dir, excludes, files, currDir, path, info, err)
 
 		} else {
+
+			fmt.Printf("info: %#v\n", info)
+
+		}
+
+		// old way of getting files
+		if err != nil {
+
+			prtcl.PrintObject(dir, excludes, files, currDir, path, info, err)
+
+		} else {
+
+			prtcl.PrintObject(info)
 
 			splitted := strings.Split(path, "/")
 

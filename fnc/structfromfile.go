@@ -33,7 +33,7 @@ func LoadStructFromFile(datatype, file string, objpointer interface{}) error {
 
 		default:
 
-			err = errors.New("datatype unsupported, pls use 'json'´or 'yaml'")
+			err = errors.New("datatype unsupported, please use 'json'or 'yaml'")
 		}
 	}
 
