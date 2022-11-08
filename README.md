@@ -36,6 +36,7 @@ The fnc subpackage contains the following functionalities:
 - ``UnencodeB64(b64 string) string``: Converts Base64-strings into unencoded strings.
 - ``EncodeB64(text string) string``: Converts strings into Base64-encoded strings.
 - ``LoadStructFromFile(datatype, file string, objpointer interface{}) error``: Loads a file into a struct. Currently ``json`` and ``yaml`` are supported. To load the file into the specific struct, the struct needs the specific tags. Only public fields can be loaded. The functions needs the object (of the struct) as a pointer (*struct).
+- ``StringInList(_string string, _list []string) bool``: Checks the list, if the list contains `_string` the return value will be `true`.
 ### Encryption
 The encryption subpackage contains only for functions for the encryption. To import them in a project use:
 ```go
