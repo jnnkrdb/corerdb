@@ -11,6 +11,13 @@ git tag
 
 set /p tag=Tag:
 
+if "%tag%" == "" goto END
+
+echo Go to END
+goto END
+
 git tag %tag%
 
 git push origin master
+
+:END
