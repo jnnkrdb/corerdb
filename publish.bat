@@ -9,12 +9,9 @@ git push origin master
 
 git tag
 
-set /p tag=Tag:
+set /p tag=NewTag:
 
 if "%tag%" == "" goto END
-
-echo Go to END
-goto END
 
 git tag %tag%
 
