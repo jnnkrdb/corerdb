@@ -10,6 +10,10 @@ import (
 )
 
 // sending the mailmessage
+//
+// Parameters:
+//   - `mailserver` : SMTPServer > information about the smtp-server connection and authentication
+//   - `msg` : MailMessage > structural information about the message, which will be send
 func SendMail(mailserver SMTPServer, msg MailMessage) (err error) {
 
 	prtcl.Log.Println("starting mailflow")
