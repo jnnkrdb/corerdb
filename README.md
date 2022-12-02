@@ -45,6 +45,7 @@ import "github.com/jnnkrdb/corerdb/crypt"
 The crypt subpackage contains the following functionalities:
 - ``GetDefaultPassphrase() string``: Returns the string of the currently defined passphrase. Default is ``"DEFAULT-ENCRYPTION-PASSPHRASE"``.
 - ``SetDefaultPassphrase(passphrase string)``: Sets the defined default passphrase to the given string. HIGHLY RECOMMENDED!
+- ``CreateRandomPassphrase(length int) string``: Creates a random passphrase for decryption and encryption.
 - ``EncryptWithDefault(text string) (string, error)``: Encrypts a given string with the default passphrase.
 - ``Encrypt(passphrase, text string) (string, error)``: Encrypts a given string with the given passphrase.
 - ``DecryptWithDefault(text string) (string, error)``: Decrypts a given string with the default passphrase.

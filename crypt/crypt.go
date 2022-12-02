@@ -16,6 +16,7 @@ import (
 	"encoding/base64"
 	"errors"
 	"io"
+	random "math/rand"
 )
 
 // the default encryption passphrase, nothing special
@@ -37,6 +38,24 @@ func GetDefaultPassphrase() string {
 func SetDefaultPassphrase(passphrase string) {
 
 	_DEFAULT_Passphrase = passphrase
+}
+
+// create a random passphrase for de- and encryption
+//
+// Parameters:
+//   - `length` : int > length of the generated passphrase
+func CreateRandomPassphrase(length int) string {
+
+	const characters = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ"
+
+	b := make([]byte, length)
+
+	for i := range b {
+
+		b[i] = characters[random.Intn(len(characters))]
+	}
+
+	return string(b)
 }
 
 // ------------------------------------------------------------------
