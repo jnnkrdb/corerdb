@@ -9,11 +9,9 @@ import (
 
 var (
 	mdbOptions *options.ClientOptions
-	mdbConn    string
 )
 
 func InitMongoDBSettings(connstring string) {
-	mdbConn = connstring
 	mdbOptions = options.Client().ApplyURI(connstring).SetServerAPIOptions(options.ServerAPI(options.ServerAPIVersion1))
 }
 
