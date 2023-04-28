@@ -32,6 +32,6 @@ func RunMDBWithContext(ctx context.Context, f MongoRequest) (err error) {
 }
 
 // execute mongodb functions with default context
-func RunMDB(f MongoRequest) {
-	RunMDBWithContext(context.TODO(), f)
+func RunMDB(f MongoRequest) error {
+	return RunMDBWithContext(context.TODO(), f)
 }
