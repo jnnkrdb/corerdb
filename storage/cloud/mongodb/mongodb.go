@@ -8,28 +8,24 @@ import (
 )
 
 var (
-	mdbOptions *options.ClientOptions
+	mdbClient *mongo.Client
 )
 
-func InitMongoDBSettings(connstring string) {
-	mdbOptions = options.Client().ApplyURI(connstring).SetServerAPIOptions(options.ServerAPI(options.ServerAPIVersion1))
+func InitMongoDBSettings(connstring string) (err error) {
+	if mdbClient, err = mongo.Connect(
+		context.TODO(),
+		options.Client().ApplyURI(connstring).SetServerAPIOptions(options.ServerAPI(options.ServerAPIVersion1))); err == nil {
+		return err
+	}
+	return nil
 }
 
-type MongoRequest func(*mongo.Client) error
-
-// execute mongodb functions with specific context
-func RunMDBWithContext(ctx context.Context, f MongoRequest) (err error) {
-	// create a new client which will be used for this request
-	var client *mongo.Client
-	if client, err = mongo.Connect(ctx, mdbOptions); err == nil {
-		if err = f(client); err == nil {
-			return client.Disconnect(context.TODO())
-		}
-	}
-	return
+// close the mongoedb connection
+func CloseMDBConnection() error {
+	return mdbClient.Disconnect(context.TODO())
 }
 
 // execute mongodb functions with default context
-func RunMDB(f MongoRequest) error {
-	return RunMDBWithContext(context.TODO(), f)
+func RunMDB(f func(*mongo.Client) error) error {
+	return f(mdbClient)
 }
